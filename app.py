@@ -21,7 +21,7 @@ dropoff_latitude = st.number_input('dropoff latitude', value=-73.7803331)
 passenger_count = st.number_input('passenger_count', min_value=1, max_value=8, step=1, value=1)
 
 # enter here the address of your flask api
-url = 'http://taxifare.lewagon.ai/predict_fare'
+url = 'https://wagon-exo-z7fyqqvx3a-ew.a.run.app/predict_fare'
 
 params = dict(
     key=key,
@@ -36,6 +36,6 @@ response = requests.get(url, params=params)
 
 prediction = response.json()
 
-pred = prediction['prediction']
+pred = prediction['pred']
 
 pred
