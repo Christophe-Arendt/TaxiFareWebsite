@@ -38,4 +38,6 @@ prediction = response.json()
 
 pred = prediction['pred']
 
-pred
+while pred == ValueError:
+  pred = prediction['pred']
+  pred
