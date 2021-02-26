@@ -1,5 +1,6 @@
 streamlit
-
 datetime
-
 requests
+datetime
+streamlit_folium
+folium
