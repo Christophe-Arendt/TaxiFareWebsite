@@ -57,8 +57,8 @@ folium.Marker(
 # call to render Folium map in Streamlit
 folium_static(m)
 # enter here the address of your flask api
-url = 'https://wagon-exo-z7fyqqvx3a-ew.a.run.app/predict_fare'
-
+#url = 'https://wagon-exo-z7fyqqvx3a-ew.a.run.app/predict_fare'
+url = 'https://taxifareapi-lrbsb3mzwa-ew.a.run.app/predict_fare'
 params = dict(
     key=key,
     pickup_datetime=pickup_datetime,
@@ -72,5 +72,5 @@ st.markdown('The taxi fare for this journey is : ')
 
 response = requests.get(url, params=params)
 prediction = response.json()
-pred = prediction['pred']
-st.write(pred)
+pred = prediction['prediction']
+st.write(round(pred,2),'💲')
